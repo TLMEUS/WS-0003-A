@@ -1,0 +1,25 @@
+{% extends "layout.tlmt" %}
+{% block title %}
+    {% echo $_ENV['NAME'] %} Seating Sections
+{% endblock %}
+{% block subtitle %}
+    Update Section
+{% endblock %}
+{% block body %}
+    <div class="tlme-70Container tlme-center">
+        <h1 class="tlme-caption">
+            Enter the new section name.
+            <a href="#" onclick="history.back()"><img class="return" src="https://assets.tlme.us/img/trans.png" /></a>
+        </h1>
+        <div class="tlme-form">
+            <form action="/sections/updateSection" method="post">
+                <input name="colId" id="colId" type="hidden" value="{{ colId }}">
+                <input type="text" name="colName" id="colName" value="{{ colName }}">
+                <label for="colName">New Section Name</label><br /><br />
+                <div class="tlme-100Container tlme-center">
+                    <button class="tlme-button" type="submit">Update Section</button>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

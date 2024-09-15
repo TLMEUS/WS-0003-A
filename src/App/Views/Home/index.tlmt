@@ -1,0 +1,19 @@
+{% extends "layout.tlmt" %}
+{% block title %}
+    {% echo $_ENV['NAME'] %} Table Configuring Utility
+{% endblock %}
+{% block subtitle %}
+    Home Page
+{% endblock %}
+{% block body %}
+    <div id="tlme-body">
+        <p class="tlme-para">This application allows the system administrator to create sections and tables in the cafe.</p>
+        <p class="tlme-para">The different functions of the application are linked above and described below.</p>
+
+        <dt>Sections</dt>
+        <dd>This function divides the cafe into sections to be assigned to different servers.</dd>
+
+        <dt>Tables</dt>
+        <dd>This function assigns tables to the sections</dd>
+    </div>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends "layout_s.tlmt" %}
+{% block title %}
+    {% echo $_ENV['NAME'] %} Tables
+{% endblock %}
+{% block subtitle %}
+    Table Index
+{% endblock %}
+{% block body %}
+    <div class="tlme-70Container tlme-center">
+        <h1 class="tlme-caption">Table List
+            {% if ($_ENV['colAccess'] == 0): %}
+                <a href="/tables/create"><img class="add" src="https://assets.tlme.us/img/trans.png" /></a>
+            {% endif %}
+        </h1>
+        <table id="tlme-table">
+            <tr>
+                <th onclick="sortTable(0)">ID</th>
+                <th onclick="sortTable(1)">Table</th>
+                <th onclick="sortTable(2)">Section</th>
+                <th onclick="sortTable(3)">Seats</th>
+                <th>Actions</th>
+            </tr>
+            {% foreach ($tables as $table): %}
+                <tr>
+                    <td>{{ table['colId'] }}</td>
+                    <td>{{ table['colName'] }}</td>
+                    <td>{% echo $sections[$table['colSection'] - 1]['colName'] %}</td>
+                    <td>{{ table['colSeats'] }}</td>
+                    <td>
+                        {% if ($_ENV['colAccess'] == 0): %}
+                            <a href="/tables/update/{{ table['colId'] }}"><img class="update" src="https://assets.tlme.us/img/trans.png" /></a>
+                            <a href="/tables/delete/{{ table['colId'] }}"><img class="delete" src="https://assets.tlme.us/img/trans.png" /></a>
+                        {% endif %}
+                    </td>
+                </tr>
+            {% endforeach %}
+        </table>
+    </div>
+{% endblock %}

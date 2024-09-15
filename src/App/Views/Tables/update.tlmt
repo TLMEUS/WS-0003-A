@@ -1,0 +1,37 @@
+{% extends "layout.tlmt" %}
+{% block title %}
+    {% echo $_ENV['NAME'] %} Tables
+{% endblock %}
+{% block subtitle %}
+    Update Table
+{% endblock %}
+{% block body %}
+    <div class="tlme-70Container tlme-center">
+        <h1 class="tlme-caption">
+            Enter the updates to table: {{ colName }}
+            <a href="#" onclick="history.back()"><img class="return" src="https://assets.tlme.us/img/trans.png" /></a>
+        </h1>
+        <div class="tlme-form">
+            <form action="/tables/updateTable" method="post">
+                <input name="colId" id="colId" type="hidden" value="{{ colId }}">
+                <input type="text" name="colName" id="colName" value="{{ colName }}">
+                <label for="colName">New Table Name</label><br /><br />
+                <select name="colSection" id="colSection" style="width: 100%">
+                    {% foreach ($sections as $section): %}
+                        <option value="{{ section['colId'] }}"
+                        {% if ($section['colId'] == $oldSection): %}
+                            selected
+                        {% endif %}
+                        >{{ section['colName'] }}</option>
+                    {% endforeach; %}
+                </select><br />
+                <label for="colSection">New Table Section</label><br />
+                <input type="text" name="colSeats" id="colSeats" value="{{ colSeats }}">
+                <label for="colSeats">New Seat Count</label><br /><br />
+                <div class="tlme-100Container tlme-center">
+                    <button class="tlme-button" type="submit">Update Section</button>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

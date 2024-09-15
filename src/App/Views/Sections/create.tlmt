@@ -1,0 +1,24 @@
+{% extends "layout.tlmt" %}
+{% block title %}
+    {% echo $_ENV['NAME'] %} Seating Sections
+{% endblock %}
+{% block subtitle %}
+    Create Section
+{% endblock %}
+{% block body %}
+    <div class="tlme-70Container tlme-center">
+        <h1 class="tlme-caption">
+            Add a new section to the database.
+            <a href="#" onclick="history.back()"><img class="return" src="https://assets.tlme.us/img/trans.png" /></a>
+        </h1>
+        <div class="tlme-form">
+            <form action="/sections/createSection" method="POST">
+                <input type="text" name="colName" id="colName">
+                <label for="colName">Section</label><br /><br />
+                <div class="tlme-100Container tlme-center">
+                    <button class="tlme-button" type="submit">Create Section</button>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

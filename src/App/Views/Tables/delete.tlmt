@@ -1,0 +1,23 @@
+{% extends "layout.tlmt" %}
+{% block title %}
+    {% echo $_ENV['NAME'] %} Tables
+{% endblock %}
+{% block subtitle %}
+    Delete Tables
+{% endblock %}
+{% block body %}
+    <div class="tlme-70Container tlme-center">
+        <h1 class="tlme-caption">
+            Are you sure you want to delete the '{{ colName }}' table?
+        </h1>
+        <div class="tlme-form">
+            <form action="/tables/deleteTable" method="post">
+                <input name="colId" id="colId" type="hidden" value="{{ colId }}">
+                <div class="tlme-ynchoice">
+                    <button class="tlme-button tlme-no" type="reset" onclick="history.back()">No</button>
+                    <button class="tlme-button tlme-yes" type="submit">Yes</button><br/><br/>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

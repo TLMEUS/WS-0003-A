@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://assets.tlme.us/css/tlme.css" />
+        <title>{% yield title %}</title>
+    </head>
+    <body>
+        <div class="tlme-80Container tlme-center tlme-header tlme-bcolor-blue tlme-fcolor-white">
+            <div class="title">{% yield title %}</div>
+            <div class="subtitle">{% yield subtitle %}</div>
+            <div class="tlme-100Container tlme-center tlme-menu">
+                <a href="/sections/index" class="button">Sections</a>
+                <a href="/tables/index" class="button">Tables</a>
+            </div>
+        </div>
+        <div class="tlme-70Container tlme-center">
+            {% yield body %}
+        </div>
+        <div class="tlme-80Container tlme-center tlme-footer tlme-bcolor-blue tlme-fcolor-white">
+            <div class="tlme-copyright">Copyright 2023 By Troy L. Marker Enterprises. All Rights Reserved</div>
+            <div class="powered">Powered by TLME.CSS</div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,12 @@
+{% extends "blank.tlmt" %}
+{% block title %}
+    Error {{ errorcode }}
+{% endblock %}
+{% block subtitle %}
+     {{ message }}
+{% endblock %}
+{% block body %}
+    <div class="tlme-form">
+        <button class="tlme-button" onclick="history.back()">GO BACK</button>
+    </div>
+{% endblock %}

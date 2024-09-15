@@ -1,0 +1,14 @@
+{% extends "layout_s.tlmt" %}
+{% block title %}
+    {% echo $_ENV['NAME'] %} Tables
+{% endblock %}
+{% block subtitle %}
+    Filter Table Section
+{% endblock %}
+{% block body %}
+    <div class="tlme-70Container tlme-center">
+        <h1 class="tlme-caption">Filter Table Section
+            <a href="#" onclick="history.back()"><img class="return" src="https://assets.tlme.us/img/trans.png" /></a>
+        </h1>
+    </div>
+{% endblock %}

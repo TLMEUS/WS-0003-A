@@ -1,0 +1,12 @@
+{% extends "layout.tlmt" %}
+{% block title %}
+    Access Denied
+{% endblock %}
+{% block subtitle %}
+    ERROR
+{% endblock %}
+{% block body %}
+    <div class="tlme-80Container tlme-center tlme-error">
+        Access to this page requires a higher access level.
+    </div>
+{% endblock %}

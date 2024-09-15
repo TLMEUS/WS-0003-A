@@ -1,0 +1,32 @@
+{% extends "layout.tlmt" %}
+{% block title %}
+    {% echo $_ENV['NAME'] %} Tables
+{% endblock %}
+{% block subtitle %}
+    Create Table
+{% endblock %}
+{% block body %}
+    <div class="tlme-70Container tlme-center">
+        <h1 class="tlme-caption">
+            Add a new table to the database.
+            <a href="#" onclick="history.back()"><img class="return" src="https://assets.tlme.us/img/trans.png" /></a>
+        </h1>
+        <div class="tlme-form">
+            <form action="/tables/createTable" method="POST">
+                <input type="text" name="colName" id="colName">
+                <label for="colName">Table Name</label><br /><br />
+                <select name="colSection" id="colSection" style="width: 100%">
+                    {% foreach ($sections as $section): %}
+                        <option value="{{ section['colId'] }}">{{ section['colName'] }}</option>
+                    {% endforeach; %}
+                </select><br />
+                <label for="colSection">Table Section</label><br />
+                <input type=text"  name="colSeats" id="colSeats">
+                <label for="colSeats">Number of Seats</label><br />
+                <div class="tlme-100Container tlme-center">
+                    <button class="tlme-button" type="submit">Create Table</button>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

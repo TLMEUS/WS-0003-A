@@ -1,0 +1,12 @@
+{% extends "blank.tlmt" %}
+{% block title %}
+    No Access
+{% endblock %}
+{% block subtitle %}
+    ERROR
+{% endblock %}
+{% block body %}
+    <div class="tlme-80Container tlme-center tlme-error">
+        Access to the root page is not permitted.
+    </div>
+{% endblock %}

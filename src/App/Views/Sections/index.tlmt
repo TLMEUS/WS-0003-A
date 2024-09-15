@@ -1,0 +1,35 @@
+{% extends "layout.tlmt" %}
+{% block title %}
+    {% echo $_ENV['NAME'] %} Seating Sections
+{% endblock %}
+{% block subtitle %}
+    Section Index
+{% endblock %}
+{% block body %}
+    <div class="tlme-70Container tlme-center">
+        <h1 class="tlme-caption">Sections List
+            {% if ($_ENV['colAccess'] == 0): %}
+                <a href="/sections/create"><img class="add" src="https://assets.tlme.us/img/trans.png" /></a>
+            {% endif %}
+        </h1>
+        <table id="tlme-table">
+            <tr>
+                <th>ID</th>
+                <th>Section</th>
+                <th>Actions</th>
+            </tr>
+            {% foreach ($sections as $section): %}
+                <tr>
+                    <td>{% echo $section["colId"] %}</td>
+                    <td>{% echo $section["colName"] %}</td>
+                    <td>
+                        {% if ($_ENV['colAccess'] == 0): %}
+                            <a href="/sections/update/{{ section["colId"] }}"><img class="update" src="https://assets.tlme.us/img/trans.png" /></a>
+                            <a href="/sections/delete/{{ section["colId"] }}"><img class="delete" src="https://assets.tlme.us/img/trans.png" /></a>
+                        {% endif %}
+                    </td>
+                </tr>
+            {% endforeach %}
+        </table>
+    </div>
+{% endblock %}
